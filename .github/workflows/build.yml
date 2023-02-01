@@ -16,7 +16,7 @@ jobs:
       id: build
       # You may pin to the exact commit or the version.
      # uses: ianchb/android-kernel-actions-modif1@f80b7475fb4cdbcfee9dc1a5c5ccdf90760d4d80
-      uses: ianchb/android-kernel-actions-modif1@01
+      uses: ianchb/android-kernel-actions-modif1@02
       with:
         # Device architecture
         arch: arm64
@@ -27,9 +27,15 @@ jobs:
        # Kernel image name
         image: Image
         
-    - name: Release build
-      uses: ncipollo/release-action@v1
+    - name: Archive files
+      uses: montudor/action-zip@v1
       with:
-        artifacts: ${{ steps.build.outputs.outfile }}
-        tag: "release"
-        token: ${{ secrets.GITHUB_TOKEN }}
+        args: zip -qq -r out.zip ${{ steps.build.outputs.outdir }}
+    
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.1.2
+      with:
+        # Artifact name
+        name: out.zip
+        path: './out.zip'
+    

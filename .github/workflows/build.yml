@@ -31,4 +31,5 @@ jobs:
       uses: ncipollo/release-action@v1
       with:
         artifacts: ${{ steps.build.outputs.outfile }}
+        tag: "release"
         token: ${{ secrets.GITHUB_TOKEN }}

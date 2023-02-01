@@ -25,7 +25,7 @@ jobs:
         # Defconfig to use
         defconfig: renoir-qgki_defconfig
        # Kernel image name
-        image: Image.gz-dtb
+        image: Image
         
     - name: Release build
       uses: ncipollo/release-action@v1

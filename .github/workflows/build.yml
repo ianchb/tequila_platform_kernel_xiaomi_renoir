@@ -21,7 +21,7 @@ jobs:
         # Device architecture
         arch: arm64
         # Compiler to use
-        compiler: clang/11
+        compiler: gcc/9
         # Defconfig to use
         defconfig: renoir-qgki_defconfig
        # Kernel image name

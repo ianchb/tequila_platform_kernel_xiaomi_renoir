@@ -57,7 +57,7 @@ jobs:
         # Compiler to use
         compiler: proton-clang/master
         # Defconfig to use
-        defconfig: renoir-qgki_defconfig
+        defconfig: stock_defconfig
        # Kernel image name
         image: Image
         
